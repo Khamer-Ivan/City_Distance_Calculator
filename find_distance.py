@@ -2,6 +2,7 @@ from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 from typing import Tuple, Any
 import requests
+import os
 
 
 def get_coordinates(city_name: str) -> Tuple[float, float]:
@@ -59,8 +60,10 @@ def get_road_distance(city1: str, city2: str) -> Any:
         location2: tuple = get_coordinates(city2)
 
         url = "https://api.openrouteservice.org/v2/directions/driving-car"
+
+        api_key = os.getenv('API_KEY')
         params = {
-            "api_key": "5b3ce3597851110001cf624891e2eb0ae04b4436bfd9587220f7f28d",
+            "api_key": api_key,
             "start": f"{location1[1]},{location1[0]}",
             "end": f"{location2[1]},{location2[0]}",
         }

@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index() -> str:
     if request.method == 'POST':
-        city_1: str = request.form['city_1']
-        city_2: str = request.form['city_2']
+        city_1: str = request.form['city_1'].lower()
+        city_2: str = request.form['city_2'].lower()
 
         if city_1 == city_2:
             return render_template('index.html', error_message='Вы ввели один и тот же город в оба поля.')
