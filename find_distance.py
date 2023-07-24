@@ -62,6 +62,7 @@ def get_road_distance(city1: str, city2: str) -> Any:
         url = "https://api.openrouteservice.org/v2/directions/driving-car"
 
         api_key = os.getenv('API_KEY')
+
         params = {
             "api_key": api_key,
             "start": f"{location1[1]},{location1[0]}",
