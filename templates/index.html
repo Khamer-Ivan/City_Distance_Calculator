@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Distance Calculator 🌍 </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Расчет расстояния между городами</h1>
+        <form method="post">
+            <label for="city_1">Введите название первого города:</label>
+            <input type="text" name="city_1" required>
+            <br>
+            <label for="city_2">Введите название второго города:</label>
+            <input type="text" name="city_2" required>
+            <br>
+            <input type="submit" value="Рассчитать" class="calculate-button"> <!-- Используем класс calculate-button -->
+        </form>
+        {% if error_message %}
+        <span class="index-error">{{ error_message }}</span>
+        {% endif %}
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            document.body.classList.add('show-container');
+        });
+    </script>
+</body>
+</html>

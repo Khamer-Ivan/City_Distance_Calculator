@@ -1,0 +1,145 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/static/back.jpg");
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 3s ease;
+}
+
+body.show-container .container {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+h1 {
+    color: #000000;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.results-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.result-text {
+    font-size: 24px;
+    margin-bottom: 40px;
+    display: block;
+    font-weight: bold;
+}
+
+.result-distance {
+    font-size: 18px;
+    margin-bottom: 40px;
+    display: block;
+    font-weight: bold;
+}
+
+.result-city {
+    font-weight: bold;
+    font-size: 28px;
+
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.index-error {
+    color: #8B0000;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 19px;
+}
+
+/* Стили для кнопки "Назад" */
+.back-button-container {
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    width: 220px;
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для кнопки "Рассчитать" */
+.calculate-button {
+    display: inline-block;
+    width: 220px;
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.calculate-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
