@@ -8,7 +8,7 @@ import os
 def get_coordinates(city_name: str) -> Tuple[float, float]:
 
     """
-    Метод для получения координат города
+   Method for getting the coordinates of the city
 
     :param city_name: str
     :return: Tuple[float, float]
@@ -17,7 +17,7 @@ def get_coordinates(city_name: str) -> Tuple[float, float]:
     geolocator = Nominatim(user_agent="city_distance_calculator")
     location = geolocator.geocode(city_name)
     if location is None:
-        raise ValueError("Город не найден")
+        raise ValueError("City not found")
 
     return location.latitude, location.longitude
 
@@ -25,7 +25,7 @@ def get_coordinates(city_name: str) -> Tuple[float, float]:
 def calculate_distance(city1: str, city2: str) -> float:
 
     """
-    Метод для вычисления расстояния между двумя городами
+   A method for calculating the distance between two cities
 
     :param city1: str
     :param city2: str
@@ -48,7 +48,7 @@ def calculate_distance(city1: str, city2: str) -> float:
 def get_road_distance(city1: str, city2: str) -> Any:
 
     """
-    Метод для вычисления расстояния между двумя городами по дорогам
+    A method for calculating the distance between two cities by road
 
     :param city1: str
     :param city2: str
@@ -73,9 +73,9 @@ def get_road_distance(city1: str, city2: str) -> Any:
 
         if "features" in data and data["features"]:
             road_distance = data["features"][0]["properties"]["segments"][0]["distance"]
-            return road_distance / 1000  # Переводим в километры
+            return road_distance / 1000
         else:
-            return 'Невозможно проложить автомобильный маршрут.'
+            return 'It is impossible to plot a car route.'
 
     except ValueError as e:
         return str(e)

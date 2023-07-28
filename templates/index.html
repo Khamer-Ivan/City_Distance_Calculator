@@ -6,15 +6,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Расчет расстояния между городами</h1>
+        <h1>Calculation of the distance between cities</h1>
         <form method="post">
-            <label for="city_1">Введите название первого города:</label>
+            <label for="city_1">Enter the name of the first city:</label>
             <input type="text" name="city_1" required>
             <br>
-            <label for="city_2">Введите название второго города:</label>
+            <label for="city_2">Enter the name of the second city:</label>
             <input type="text" name="city_2" required>
             <br>
-            <input type="submit" value="Рассчитать" class="calculate-button"> <!-- Используем класс calculate-button -->
+            <input type="submit" value="Calculate" class="calculate-button">
         </form>
         {% if error_message %}
         <span class="index-error">{{ error_message }}</span>
